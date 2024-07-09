@@ -17,20 +17,26 @@ public class QuanLyNhanVat {
 
     public void nhapDuLieu() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập tên nhân vật:");
-        String ten = scanner.nextLine();
-        System.out.println("Nhập ID:");
-        int id = scanner.nextInt();
-        scanner.nextLine(); // consume newline
-        System.out.println("Nhập giới tính:");
-        String gioiTinh = scanner.nextLine();
-        System.out.println("Nhập năng lượng:");
-        double nangLuong = scanner.nextDouble();
-        scanner.nextLine(); // consume newline
+        System.out.print("Nhập số lượng nhân vật cần thêm: ");
+        int soLuongNhanVat = scanner.nextInt();
+        scanner.nextLine();
 
-        NhanVat nhanVat = new NhanVat(ten, id, gioiTinh, nangLuong);
-        danhSachNhanVat.add(nhanVat);
-        System.out.println("Nhân vật đã được thêm.");
+        for (int i = 0; i < soLuongNhanVat; i++) {
+            System.out.println("Nhập tên nhân vật:");
+            String ten = scanner.nextLine();
+            System.out.println("Nhập ID:");
+            int id = scanner.nextInt();
+            scanner.nextLine(); 
+            System.out.println("Nhập giới tính:");
+            String gioiTinh = scanner.nextLine();
+            System.out.println("Nhập năng lượng:");
+            double nangLuong = scanner.nextDouble();
+            scanner.nextLine(); 
+
+            NhanVat nhanVat = new NhanVat(ten, id, gioiTinh, nangLuong);
+            danhSachNhanVat.add(nhanVat);
+            System.out.println("Nhân vật đã được thêm.");
+        }
     }
 
     public void xuatDuLieu() {
